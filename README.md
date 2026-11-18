@@ -394,6 +394,28 @@ Códigos usados:
 - `409` para conflito com uma regra do domínio;
 - `500` sanitizado para falha inesperada.
 
+## Evidências de execução
+
+As imagens abaixo foram registradas com a aplicação em execução no ambiente `Development`, usando o Swagger UI disponibilizado pelo próprio projeto.
+
+### Documentação e endpoints REST
+
+A interface OpenAPI apresenta a AJA API, a autenticação Bearer e os grupos de endpoints de autenticação, demandas, participações, comentários e health check.
+
+![Swagger UI da AJA API com os endpoints REST](assets/evidencias/01-swagger-visao-geral.jpg)
+
+### Health check
+
+A rota pública `GET /health` confirma que a aplicação iniciou corretamente e está pronta para receber requisições.
+
+![Resposta saudável da rota GET health](assets/evidencias/02-health-check.jpg)
+
+### Consulta autenticada e histórico
+
+A chamada autenticada `GET /api/v1/demandas/{id}` retorna `200 OK` e reúne os dados da demanda, a categoria `Fisica`, a situação `EmAndamento`, os totais de participação e o histórico da alteração administrativa com justificativa.
+
+![Resposta autenticada com os dados e o histórico da demanda](assets/evidencias/03-demanda-autenticada.jpg)
+
 ## Testes e verificação
 
 ```powershell
